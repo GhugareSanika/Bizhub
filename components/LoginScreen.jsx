@@ -8,6 +8,7 @@ import { useOAuth } from "@clerk/clerk-expo";
 WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
+  // Warm up browser for faster OAuth flows
   useWarmUpBrowser();
 
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });

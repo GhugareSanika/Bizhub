@@ -4,7 +4,6 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { Stack } from "expo-router";
 import LoginScreen from "./../components/LoginScreen";
 import { useFonts } from "expo-font";
-
 import * as SecureStore from "expo-secure-store";
 
 const tokenCache = {
