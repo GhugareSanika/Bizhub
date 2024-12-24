@@ -28,11 +28,13 @@ export default function BusinessListCategory() {
     );
     const querySnapshot = await getDocs(q);
 
-    const fetchedData = [];
+    // const fetchedData = [];
+
     querySnapshot.forEach((doc) => {
-      fetchedData.push(doc.data());
+      // fetchedData.push(doc.data());
+      setBusinessList((prev) => [...prev, { id: doc?.id, ...doc.data() }]);
     });
-    setBusinessList(fetchedData);
+    // setBusinessList(fetchedData);
     setLoading(false);
   };
   return (
