@@ -76,7 +76,14 @@
 //   );
 // }
 
-import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Linking,
+  Share,
+} from "react-native";
 import React from "react";
 import { FlatList } from "react-native";
 
@@ -110,7 +117,14 @@ export default function ActionButton({ business }) {
 
   const onPresshandle = (item) => {
     if (item.name === "Share") {
-      return; // Handle share separately if needed
+      Share.share({
+        message:
+          business?.name +
+          "\n Address:" +
+          business.address +
+          "\n Find more detail on the business directory app !!",
+      });
+      return;
     }
     Linking.openURL(item.url);
   };
